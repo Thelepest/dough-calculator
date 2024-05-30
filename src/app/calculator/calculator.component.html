@@ -4,7 +4,7 @@
         <div class="input-group">
             <label for="shape">Shape:</label>
             <select id="shape" [(ngModel)]="form.shape" name="shape" required>
-                <option value="">Select Shape</option>
+                <option value="" disabled selected>Select Shape</option>
                 <option value="rectangular">Rectangular</option>
                 <option value="circular">Circular</option>
             </select>
@@ -25,7 +25,7 @@
         <div class="input-group">
             <label for="product">Product:</label>
             <select id="product" [(ngModel)]="form.product" name="product" required>
-                <option value="">Select Product</option>
+                <option value="" disabled selected>Select Product</option>
                 <option value="focaccia">Focaccia</option>
                 <option value="pizza">Pizza</option>
             </select>
@@ -39,7 +39,7 @@
         <div class="input-group">
             <label for="season">Season:</label>
             <select id="season" [(ngModel)]="form.season" name="season" required>
-                <option value="">Select Season</option>
+                <option value="" disabled selected>Select Season</option>
                 <option value="summer">Summer</option>
                 <option value="winter">Winter</option>
             </select>
