@@ -1,0 +1,74 @@
+<div class="container">
+    <h2>Dough Calculation</h2>
+    <form (ngSubmit)="calculateRecipe()">
+        <div class="input-group">
+            <label for="shape">Shape:</label>
+            <select id="shape" [(ngModel)]="form.shape" name="shape" required>
+                <option value="">Select Shape</option>
+                <option value="rectangular">Rectangular</option>
+                <option value="circular">Circular</option>
+            </select>
+        </div>
+
+        <div class="input-group" *ngIf="form.shape === 'rectangular'">
+            <label for="length">Length (cm):</label>
+            <input type="number" id="length" [(ngModel)]="form.length" name="length">
+            <label for="depth">Depth (cm):</label>
+            <input type="number" id="depth" [(ngModel)]="form.depth" name="depth">
+        </div>
+
+        <div class="input-group" *ngIf="form.shape === 'circular'">
+            <label for="diameter">Diameter (cm):</label>
+            <input type="number" id="diameter" [(ngModel)]="form.diameter" name="diameter">
+        </div>
+
+        <div class="input-group">
+            <label for="product">Product:</label>
+            <select id="product" [(ngModel)]="form.product" name="product" required>
+                <option value="">Select Product</option>
+                <option value="focaccia">Focaccia</option>
+                <option value="pizza">Pizza</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="quantity">Number of Products:</label>
+            <input type="number" id="quantity" [(ngModel)]="form.quantity" name="quantity" required>
+        </div>
+
+        <div class="input-group">
+            <label for="season">Season:</label>
+            <select id="season" [(ngModel)]="form.season" name="season" required>
+                <option value="">Select Season</option>
+                <option value="summer">Summer</option>
+                <option value="winter">Winter</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="hydration">Hydration (%):</label>
+            <select id="hydration" [(ngModel)]="form.hydration" name="hydration">
+                <option value="70">70</option>
+                <option value="75">75</option>
+                <option value="80" selected>80</option>
+                <option value="85">85</option>
+                <option value="90">90</option>
+            </select>
+        </div>
+
+        <button type="submit" [disabled]="!isFormValid()">Calculate</button>
+        <button type="button" (click)="resetForm()" class="reset-btn">Reset</button>
+    </form>
+
+    <div class="recipe" *ngIf="recipe">
+        <h2>Recipe</h2>
+        <p>
+            Recipe chosen: {{ recipe.product }}<br>
+            Number of pieces: {{ recipe.quantity }}<br>
+            Flour: {{ recipe.flour }} grams<br>
+            Water: {{ recipe.water }} grams<br>
+            Salt: {{ recipe.salt }} grams<br>
+            Levain: {{ recipe.levain }} grams
+        </p>
+    </div>
+</div>
