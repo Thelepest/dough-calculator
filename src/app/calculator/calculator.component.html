@@ -59,16 +59,15 @@
         <button type="submit" [disabled]="!isFormValid()">Calculate</button>
         <button type="button" (click)="resetForm()" class="reset-btn">Reset</button>
     </form>
-
-    <div class="recipe" *ngIf="recipe">
-        <h2>Recipe</h2>
-        <p>
-            Recipe chosen: {{ recipe.product }}<br>
-            Number of pieces: {{ recipe.quantity }}<br>
-            Flour: {{ recipe.flour }} grams<br>
-            Water: {{ recipe.water }} grams<br>
-            Salt: {{ recipe.salt }} grams<br>
-            Levain: {{ recipe.levain }} grams
-        </p>
-    </div>
+</div>
+<div class="recipe" *ngIf="recipe">
+    <h2>Recipe Details</h2>
+    <p>
+        <span>Recipe chosen:</span> {{ recipe.product }}<br>
+        <span>Number of pieces:</span> {{ recipe.quantity }}<br>
+        <span>Flour:</span> {{ recipe.flour }} grams<br>
+        <span>Water:</span> {{ recipe.water }} grams<br>
+        <span>Salt:</span> {{ recipe.salt }} grams<br>
+        <span>Levain:</span> {{ recipe.levain }} grams
+    </p>
 </div>
