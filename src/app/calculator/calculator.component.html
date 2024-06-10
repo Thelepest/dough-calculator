@@ -2,7 +2,8 @@
     <h2>Obliczenie ilości ciasta</h2>
     <form (ngSubmit)="calculateRecipe()">
         <div class="input-group">
-            <label for="shape">Kształt blachy do pieczenia:</label>
+            <label for="shape">Kształt blachy do pieczenia :</label>
+            <i class="pi pi-question-circle" pTooltip="Ostateczny kształt Twojego produktu, nawet jeśli nie używasz blachy do pieczenia!" tooltipPosition="top"></i>
             <select id="shape" [(ngModel)]="form.shape" name="shape" required>
                 <option value="" disabled selected>Wybierz</option>
                 <option value="rectangular">Prostokątny</option>
@@ -38,6 +39,7 @@
 
         <div class="input-group">
             <label for="season">Pora roku:</label>
+            <i class="pi pi-question-circle" pTooltip="Jeśli temperatura otoczenia jest równa lub wyższa niż 25 stopni, wybierz wiosnę-lato. Inaczej wybierz jesień-zimę." tooltipPosition="top"></i>
             <select id="season" [(ngModel)]="form.season" name="season" required>
                 <option value="" disabled selected>Wybierz</option>
                 <option value="summer">Wiosna-Lato</option>
@@ -47,6 +49,7 @@
 
         <div class="input-group">
             <label for="hydration">Hydratacja (%):</label>
+            <i class="pi pi-question-circle" pTooltip="Hydratacja to procent wody w stosunku do masy mąki i jeśli nie chcesz ryzykować, nie przekraczaj 80% w przypadku pizzy i focacci!" tooltipPosition="top"></i>
             <select id="hydration" [(ngModel)]="form.hydration" name="hydration">
                 <option value="70">70</option>
                 <option value="75">75</option>
