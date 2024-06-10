@@ -32,6 +32,16 @@ header h1 {
     max-width: 600px;
     margin-top: 20px;
 }
+
+.container button {
+    margin :14%;
+    padding: 10px 20px;
+    background: #00796b;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .container h2 {
     margin-top: 0;
 }
