@@ -1,52 +1,52 @@
 <div class="container">
-    <h2>Dough Calculation</h2>
+    <h2>Obliczenie ilości ciasta</h2>
     <form (ngSubmit)="calculateRecipe()">
         <div class="input-group">
-            <label for="shape">Shape:</label>
+            <label for="shape">Kształt blachy do pieczenia:</label>
             <select id="shape" [(ngModel)]="form.shape" name="shape" required>
-                <option value="" disabled selected>Select Tray Shape</option>
-                <option value="rectangular">Rectangular</option>
-                <option value="circular">Circular</option>
+                <option value="" disabled selected>Wybierz</option>
+                <option value="rectangular">Prostokątny</option>
+                <option value="circular">Okrągły</option>
             </select>
         </div>
 
         <div class="input-group" *ngIf="form.shape === 'rectangular'">
-            <label for="length">Length (cm):</label>
+            <label for="length">Długość (cm):</label>
             <input type="number" id="length" [(ngModel)]="form.length" name="length">
-            <label for="depth">Depth (cm):</label>
+            <label for="depth"> Szerokość (cm):</label>
             <input type="number" id="depth" [(ngModel)]="form.depth" name="depth">
         </div>
 
         <div class="input-group" *ngIf="form.shape === 'circular'">
-            <label for="diameter">Diameter (cm):</label>
+            <label for="diameter">Średnica (cm):</label>
             <input type="number" id="diameter" [(ngModel)]="form.diameter" name="diameter">
         </div>
 
         <div class="input-group">
-            <label for="product">Product:</label>
+            <label for="product">Co pieczesz dzisiaj?</label>
             <select id="product" [(ngModel)]="form.product" name="product" required>
-                <option value="" disabled selected>Select Product</option>
+                <option value="" disabled selected>Wybierz</option>
                 <option value="focaccia">Focaccia</option>
                 <option value="pizza">Pizza</option>
             </select>
         </div>
 
         <div class="input-group">
-            <label for="quantity">Number of Products:</label>
+            <label for="quantity">Ile sztuk?</label>
             <input type="number" id="quantity" [(ngModel)]="form.quantity" name="quantity" required>
         </div>
 
         <div class="input-group">
-            <label for="season">Season:</label>
+            <label for="season">Pora roku:</label>
             <select id="season" [(ngModel)]="form.season" name="season" required>
-                <option value="" disabled selected>Select Season</option>
-                <option value="summer">Summer</option>
-                <option value="winter">Winter</option>
+                <option value="" disabled selected>Wybierz</option>
+                <option value="summer">Wiosna-Lato</option>
+                <option value="winter">Jesień-Zima</option>
             </select>
         </div>
 
         <div class="input-group">
-            <label for="hydration">Hydration (%):</label>
+            <label for="hydration">Hydratacja (%):</label>
             <select id="hydration" [(ngModel)]="form.hydration" name="hydration">
                 <option value="70">70</option>
                 <option value="75">75</option>
@@ -56,18 +56,18 @@
             </select>
         </div>
 
-        <button type="submit" [disabled]="!isFormValid()">Calculate</button>
+        <button type="submit" [disabled]="!isFormValid()">Oblicz</button>
         <button type="button" (click)="resetForm()" class="reset-btn">Reset</button>
     </form>
 </div>
 <div class="recipe" *ngIf="recipe">
-    <h2>Recipe Details</h2>
+    <h2>Szczegóły twojego przepisu</h2>
     <p>
-        <span>Recipe chosen:</span> {{ recipe.product }}<br>
-        <span>Number of pieces:</span> {{ recipe.quantity }}<br>
-        <span>Flour:</span> {{ recipe.flour }} grams<br>
-        <span>Water:</span> {{ recipe.water }} grams<br>
-        <span>Salt:</span> {{ recipe.salt }} grams<br>
-        <span>Levain:</span> {{ recipe.levain }} grams
+        <span>Przepis:</span> {{ recipe.product }}<br>
+        <span>Sztuki:</span> {{ recipe.quantity }}<br>
+        <span>Mąka:</span> {{ recipe.flour }} gr<br>
+        <span>Woda:</span> {{ recipe.water }} gr<br>
+        <span>Sól:</span> {{ recipe.salt }} gr<br>
+        <span>Zakwas:</span> {{ recipe.levain }} gr
     </p>
 </div>
